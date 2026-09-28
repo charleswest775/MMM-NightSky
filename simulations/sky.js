@@ -1,4 +1,4 @@
-/* Not chaos: the sky over the mirror, tonight. The whole sky as a circle, the point overhead at
+/* The sky over the mirror, tonight. The whole sky as a circle, the point overhead at
  * the centre and the horizon at the rim, north at the top and east on the left, as seen lying on
  * your back with your head to the north (a stereographic projection: shapes stay true). Stars
  * sized by brightness and coloured by their temperature (B − V); constellation figures; the
@@ -12,9 +12,9 @@
  * precessed to the date (sky-math.js).
  */
 (function (root) {
-	const M = root.ChaosSkyMath || require("./sky-math.js");
-	const STARS = root.ChaosStars || (typeof module !== "undefined" ? (() => { try { return require("../data/stars.js"); } catch (e) { return null; } })() : null);
-	const STORIES = root.ChaosStarStories || require("../data/star-stories.js");
+	const M = root.SkyMath || require("./sky-math.js");
+	const STARS = root.SkyStars || (typeof module !== "undefined" ? (() => { try { return require("../data/stars.js"); } catch (e) { return null; } })() : null);
+	const STORIES = root.SkyStarStories || require("../data/star-stories.js");
 
 	const MARGIN = 0.9;              // the horizon's radius, as a fraction of half the canvas
 	const DARK = -12;                // the Sun this far down: dark enough for the chart
@@ -332,7 +332,7 @@
 			const full = this.events.full;
 			if (!full || Math.abs(full - this.when) > 1.5 * 86400000) return null;
 			const year = full.getUTCFullYear();
-			const equinox = root.ChaosEphemeris.nextZero((d) => M.sun(d).lon - 180, new Date(Date.UTC(year, 8, 10)), 1, 30);
+			const equinox = root.SkyEphemeris.nextZero((d) => M.sun(d).lon - 180, new Date(Date.UTC(year, 8, 10)), 1, 30);
 			const before = M.nextPhase(new Date(equinox.getTime() - 30 * 86400000), 180);
 			const after = M.nextPhase(equinox, 180);
 			const harvest = Math.abs(before - equinox) < Math.abs(after - equinox) ? before : after;
@@ -360,9 +360,9 @@
 				title: `The sky over ${this.place}`,
 				subtitle: `${whenText} · looking up, north at the top, east on the left · the Moon ${MOON_SCALE}× its size`,
 				equations: [
-					`sin h = sin φ sin δ + cos φ cos δ cos(LST − α) &nbsp; <span class="chaos-note">φ = ${this.lat.toFixed(2)}°, sidereal time ${lst}</span>`,
-					`<span class="chaos-note">${facts.join(" ")}</span>`,
-					story ? `<span class="chaos-note">${story}</span>` : ""
+					`sin h = sin φ sin δ + cos φ cos δ cos(LST − α) &nbsp; <span class="sky-note">φ = ${this.lat.toFixed(2)}°, sidereal time ${lst}</span>`,
+					`<span class="sky-note">${facts.join(" ")}</span>`,
+					story ? `<span class="sky-note">${story}</span>` : ""
 				].filter(Boolean)
 			};
 		}
@@ -377,7 +377,7 @@
 	Sky.starColour = starColour;
 	Sky.info = { title: "The sky", equations: [] };
 
-	root.ChaosSimulations = root.ChaosSimulations || {};
-	root.ChaosSimulations.sky = Sky;
+	root.SkySimulations = root.SkySimulations || {};
+	root.SkySimulations.sky = Sky;
 	if (typeof module !== "undefined") module.exports = { Sky };
 })(typeof window !== "undefined" ? window : globalThis);

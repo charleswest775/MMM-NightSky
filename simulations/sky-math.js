@@ -9,7 +9,7 @@
  * Angles in degrees unless named otherwise. UMD-style, so the tests can check it in Node.
  */
 (function (root) {
-	const E = root.ChaosEphemeris || require("./ephemeris.js");
+	const E = root.SkyEphemeris || require("./ephemeris.js");
 
 	const D = Math.PI / 180;
 	const sin = (x) => Math.sin(x * D), cos = (x) => Math.cos(x * D), tan = (x) => Math.tan(x * D);
@@ -233,6 +233,6 @@
 		jd, T, gmst, obliquity, eclipticToEquatorial, precess, sun, moon, moonEcliptic, moonPhase, nextPhase,
 		planet, horizontal, refraction, moonHorizontal, crossing, sunAltitude, moonAltitude, project, chartDirection
 	};
-	root.ChaosSkyMath = SkyMath;
+	root.SkyMath = SkyMath;
 	if (typeof module !== "undefined") module.exports = SkyMath;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -35,6 +35,6 @@
 		{ name: "Alphecca", ly: 75, text: "The jewel of the Northern Crown. Its neighbour T Coronae Borealis, usually far too faint to see, flares up to naked-eye brightness about every 80 years, as it did in 1866 and 1946." },
 		{ name: "Rasalhague", ly: 49, text: "\"The head of the serpent charmer\", Ophiuchus, the constellation the Sun passes through for three weeks each year but not a sign of the zodiac." }
 	];
-	root.ChaosStarStories = STORIES;
+	root.SkyStarStories = STORIES;
 	if (typeof module !== "undefined") module.exports = STORIES;
 })(typeof window !== "undefined" ? window : globalThis);

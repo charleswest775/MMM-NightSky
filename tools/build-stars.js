@@ -78,7 +78,7 @@ ${licence}
  */
 (function (root) {
 	const STARS = ${JSON.stringify({ stars, names: starNames, figures: figureList })};
-	root.ChaosStars = STARS;
+	root.SkyStars = STARS;
 	if (typeof module !== "undefined") module.exports = STARS;
 })(typeof window !== "undefined" ? window : globalThis);
 `;
