@@ -3,10 +3,9 @@
      `python3 -m http.server`) and open /dev/preview.html. The stub below implements just
      the parts of MagicMirror's Module API this module uses, including hide/show →
      suspend/resume, so the page lifecycle can be exercised with the buttons.
-     Query options override config, e.g. ?simulations=lorenz&fps=30 or
-     ?simulations=atom&atomElements=Au,Tc&width=700&height=700
-     or ?simulations=sacred&sacredSeed=3A7F21C0 or ?simulations=orbits&dance=venus or ?simulations=chladni&figure=12 or ?simulations=orbital or ?simulations=tilings&kind=hat or ?simulations=snow
-     or ?simulations=sky&skyLatitude=39.53&skyLongitude=-119.81&skyPlace=Reno -->
+     Query options override config, e.g. ?skyLatitude=51.5074&skyLongitude=-0.1278&skyPlace=London
+     or ?now=2026-09-26T21:00:00Z (chart another moment) or ?statsPanel=true.
+     Times in the caption follow the browser's time zone -->
 <html>
 <head>
 	<meta charset="utf-8">
