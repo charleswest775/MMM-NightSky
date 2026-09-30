@@ -39,7 +39,7 @@ chart, for his hallway mirror, as one page in a rotation of pages. Split out of 
 The shell (`MMM-NightSky.js`, `node_helper.js`'s stats panel, `dev/preview.html`) is shared in
 spirit with the sibling modules split out at the same time (MMM-ChaosTheory, MMM-Atom,
 MMM-FractalZoom, MMM-Chladni, MMM-SacredGeometry, MMM-Tilings, MMM-PlanetsDance,
-MMM-SnowCrystal, MMM-PhotoDeck, all under `~/dev/mirror-modules`): a fix there probably belongs
+MMM-SnowCrystal, MMM-PhotoDeck, all under `~/dev/mirror-modules`, MMM-StandardMap, MMM-ChaoticWaterwheel, MMM-DoubleSlit, MMM-Sandpile, MMM-Harmonograph): a fix there probably belongs
 in the siblings too.
 
 ## On the mirror
